@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ликвидация ООО под ключ от 9500₽ | Официально и законно</title>
+  <meta name="description" content="Упрощенная ликвидация ООО от 9500₽. Полная ликвидация от 32000₽. Возобновление затянувшихся процедур. Работаем по всей России. Гарантия внесения записи в ЕГРЮЛ.">
+  <meta name="keywords" content="ликвидация ООО, закрытие ООО, упрощенная ликвидация, ликвидация компании">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#1e3a8a',
+            accent: '#3b82f6',
+            cta: '#10b981',
+          },
+          fontFamily: { sans: ['Inter', 'sans-serif'] },
+        }
+      }
+    }
+  </script>
+  <meta property="og:title" content="Ликвидация ООО под ключ от 9500₽ | JURIX">
+  <meta property="og:description" content="Упрощенная ликвидация от 9500₽. Полная от 32000₽. Возобновление от 55000₽. Гарантия записи в ЕГРЮЛ.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ru_RU">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Ликвидация ООО под ключ от 9500₽">
+  <meta name="twitter:description" content="Упрощенная ликвидация ООО от 9500₽. Официально и законно. Работаем по всей России.">
+  <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "JURIX Ликвидация",
+    "description": "Юридические услуги по ликвидации ООО: упрощенная, полная, возобновление процедур.",
+    "url": "",
+    "telephone": "",
+    "priceRange": "от 9500₽",
+    "areaServed": "RU",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Услуги по ликвидации ООО",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Упрощенная ликвидация ООО"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Официальная ликвидация ООО под ключ"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Возобновление затянувшейся ликвидации ООО"
+          }
+        }
+      ]
+    }
+  }
+  </script>
+</head>
+<body class="font-sans antialiased text-gray-800 bg-white" x-data="landingApp()" @open-plan-modal.window="openModal('plan')">
+  <!-- HEADER -->
+  <header
+    class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+    :class="scrollY > 50 ? 'bg-primary/95 shadow-lg py-3' : 'bg-transparent py-5'"
+  >
+    <div class="max-w-6xl mx-auto px-4 flex items-center justify-between">
+      <div class="text-white font-bold text-xl">JURIX Ликвидация</div>
+      <nav class="hidden md:flex items-center gap-6">
+        <a href="tel:+78001234567" class="text-white/90 hover:text-white text-sm">+7 (800) 123-45-67</a>
+        <button
+          @click="openModal('plan')"
+          class="bg-cta hover:bg-emerald-600 text-white font-semibold px-5 py-2.5 rounded-lg transition"
+        >
+          Получить план за 24ч
+        </button>
+      </nav>
+      <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden text-white p-2" aria-label="Меню">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <div x-show="mobileMenuOpen" x-cloak x-transition class="md:hidden bg-primary border-t border-white/20 px-4 py-3 space-y-2">
+      <a href="tel:+78001234567" class="block text-white py-2">+7 (800) 123-45-67</a>
+      <button @click="openModal('plan'); mobileMenuOpen = false" class="w-full bg-cta text-white font-semibold py-3 rounded-lg">Получить план за 24ч</button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero min-h-screen flex items-center relative overflow-hidden">
+    <div class="hero-bg absolute inset-0 bg-primary" :style="'transform: translateY(' + (scrollY * 0.25) + 'px)'"></div>
+    <div class="max-w-6xl mx-auto px-4 relative z-10 py-24 md:py-0">
+      <h1 class="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+        Ликвидация ООО без рисков для собственников
+      </h1>
+      <p class="text-white/90 text-lg md:text-xl mb-10 max-w-2xl">
+        Законно • Быстро • С гарантией результата
+      </p>
+      <ul class="space-y-3 mb-10 text-white/95 text-base md:text-lg">
+        <li class="flex items-center gap-2">✅ Упрощенная от 9 500₽ (если подходите)</li>
+        <li class="flex items-center gap-2">✅ Полная ликвидация от 32 000₽ под ключ</li>
+        <li class="flex items-center gap-2">✅ Возобновляем затянувшиеся ликвидации</li>
+      </ul>
+      <div class="grid sm:grid-cols-3 gap-4 mb-10">
+        <div class="bg-white/10 backdrop-blur rounded-xl p-5 border border-white/20 hover:bg-white/15 transition">
+          <h3 class="text-white font-bold text-lg mb-2">Официальная</h3>
+          <p class="text-white/80 text-sm">Полная процедура, без рисков. От 32 000₽</p>
+        </div>
+        <div class="bg-white/10 backdrop-blur rounded-xl p-5 border border-white/20 hover:bg-white/15 transition">
+          <h3 class="text-white font-bold text-lg mb-2">Упрощенная</h3>
+          <p class="text-white/80 text-sm">МСП без долгов. От 9 500₽ + нотариус, публикации</p>
+        </div>
+        <div class="bg-white/10 backdrop-blur rounded-xl p-5 border border-white/20 hover:bg-white/15 transition">
+          <h3 class="text-white font-bold text-lg mb-2">С проблемами</h3>
+          <p class="text-white/80 text-sm">Долги, затянувшаяся процедура. От 55 000₽</p>
+        </div>
+      </div>
+      <button
+        @click="openModal('plan')"
+        class="bg-cta hover:bg-emerald-600 text-white font-bold text-lg px-8 py-4 rounded-xl transition shadow-lg"
+      >
+        Выбрать оптимальный тариф
+      </button>
+    </div>
+  </section>
+
+  <!-- 3 ТАРИФА -->
+  <section id="tariffs" class="py-16 md:py-24 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Наши тарифы</h2>
+      <p class="text-gray-600 text-lg mb-12 max-w-2xl">Три варианта ликвидации под разные ситуации. Обязательные расходы (нотариус, публикации) — отдельно.</p>
+
+      <div class="overflow-x-auto mb-12">
+        <table class="w-full min-w-[600px] bg-white rounded-xl shadow overflow-hidden">
+          <thead class="bg-primary text-white">
+            <tr>
+              <th class="text-left py-4 px-4">Услуга</th>
+              <th class="text-left py-4 px-4">Для кого</th>
+              <th class="text-left py-4 px-4">Срок</th>
+              <th class="text-left py-4 px-4">Стоимость</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-200">
+            <tr class="hover:bg-gray-50">
+              <td class="py-4 px-4 font-semibold">Упрощенная ликвидация</td>
+              <td class="py-4 px-4">МСП без НДС и долгов</td>
+              <td class="py-4 px-4">около 3,5 мес</td>
+              <td class="py-4 px-4"><span class="text-cta font-bold">от 9 500 ₽</span></td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+              <td class="py-4 px-4 font-semibold">Официальная ликвидация</td>
+              <td class="py-4 px-4">Любое ООО</td>
+              <td class="py-4 px-4">4–12 мес</td>
+              <td class="py-4 px-4"><span class="text-cta font-bold">от 32 000₽</span>, сложные кейсы по договорённости</td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+              <td class="py-4 px-4 font-semibold">Возобновление ликвидации</td>
+              <td class="py-4 px-4">Затянувшиеся процедуры</td>
+              <td class="py-4 px-4">индивидуально</td>
+              <td class="py-4 px-4"><span class="text-cta font-bold">от 55 000₽</span>, по договорённости</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-12">
+        <h3 class="font-bold text-amber-900 mb-2">Обязательные платежи (не входят в стоимость услуг)</h3>
+        <ul class="text-amber-800 text-sm space-y-1">
+          <li>• Нотариус: 4–5 тыс. ₽ (зависит от региона)</li>
+          <li>• Публикация в «Вестнике государственной регистрации»: в среднем 4 500 ₽</li>
+          <li>• Публикация в ФЕДРЕСУРС: от 1 061 ₽</li>
+        </ul>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6" x-data="{ activeTariff: null }">
+        <div
+          @mouseenter="activeTariff = 'simple'"
+          @mouseleave="activeTariff = null"
+          class="tariff-card bg-white rounded-2xl shadow-lg p-6 border-2 transition flex flex-col"
+          :class="activeTariff === 'simple' ? 'border-cta' : 'border-transparent'"
+        >
+          <div class="text-cta font-black text-3xl mb-2">от 9 500₽</div>
+          <h3 class="text-xl font-bold text-primary mb-3">Упрощенная ликвидация</h3>
+          <p class="text-gray-600 text-sm mb-4">МСП без долгов и НДС. Срок около 3,5 мес.</p>
+          <p class="text-xs text-gray-500 mb-4 flex-1">+ нотариус, публикации отдельно</p>
+          <button @click="openModal('plan', 'Упрощенная ликвидация')" class="w-full min-h-[48px] h-12 bg-cta text-white font-semibold rounded-lg hover:bg-emerald-600 transition flex items-center justify-center shrink-0">Подходит мне</button>
+        </div>
+        <div
+          @mouseenter="activeTariff = 'full'"
+          @mouseleave="activeTariff = null"
+          class="tariff-card bg-white rounded-2xl shadow-lg p-6 border-2 transition relative flex flex-col"
+          :class="activeTariff === 'full' ? 'border-cta' : 'border-transparent'"
+        >
+          <span class="absolute top-4 right-4 text-cta font-bold text-sm">Популярный</span>
+          <div class="text-cta font-black text-3xl mb-2">от 32 000₽</div>
+          <h3 class="text-xl font-bold text-primary mb-3">Официальная ликвидация</h3>
+          <p class="text-gray-600 text-sm mb-4 flex-1">Любое ООО под ключ. 4–12 мес. Сложные кейсы по договорённости.</p>
+          <button @click="openModal('plan', 'Полная ликвидация')" class="w-full min-h-[48px] h-12 bg-cta text-white font-semibold rounded-lg hover:bg-emerald-600 transition flex items-center justify-center shrink-0">Подходит мне</button>
+        </div>
+        <div
+          @mouseenter="activeTariff = 'resume'"
+          @mouseleave="activeTariff = null"
+          class="tariff-card bg-white rounded-2xl shadow-lg p-6 border-2 transition flex flex-col"
+          :class="activeTariff === 'resume' ? 'border-cta' : 'border-transparent'"
+        >
+          <div class="text-cta font-black text-3xl mb-2">от 55 000₽</div>
+          <h3 class="text-xl font-bold text-primary mb-3">Возобновление ликвидации</h3>
+          <p class="text-gray-600 text-sm mb-4 flex-1">Затянувшаяся процедура. Срок и стоимость по диагностике.</p>
+          <button @click="openModal('plan', 'Затянувшаяся ликвидация')" class="w-full min-h-[48px] h-12 bg-cta text-white font-semibold rounded-lg hover:bg-emerald-600 transition flex items-center justify-center shrink-0">Подходит мне</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ОФИЦИАЛЬНО VS СЕРЫЕ СХЕМЫ -->
+  <section id="official-vs" class="py-16 md:py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Почему официально лучше</h2>
+      <p class="text-gray-600 text-lg mb-12">Сравнение официальной ликвидации и «быстрых» схем.</p>
+      <div class="overflow-x-auto">
+        <table class="w-full min-w-[500px] rounded-xl overflow-hidden shadow border border-gray-200">
+          <thead>
+            <tr class="bg-primary text-white">
+              <th class="text-left py-4 px-4 font-semibold">Официальная ликвидация</th>
+              <th class="text-left py-4 px-4 font-semibold">«Быстрые» схемы</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-200">
+            <tr class="bg-emerald-50">
+              <td class="py-4 px-4">✅ Без уголовных рисков</td>
+              <td class="py-4 px-4 text-red-700">❌ Ст. 173.2 УК РФ</td>
+            </tr>
+            <tr>
+              <td class="py-4 px-4">✅ Закрытие всех обязательств</td>
+              <td class="py-4 px-4 text-red-700">❌ Субсидиарная ответственность</td>
+            </tr>
+            <tr class="bg-emerald-50">
+              <td class="py-4 px-4">✅ Возможность нового бизнеса</td>
+              <td class="py-4 px-4 text-red-700">❌ Блокировка счетов</td>
+            </tr>
+            <tr>
+              <td class="py-4 px-4">⏱️ 3,5–12 месяцев</td>
+              <td class="py-4 px-4 text-amber-700">⚠️ Проверки ФНС через 3 года</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- КАК ЭТО РАБОТАЕТ -->
+  <section id="how" class="py-16 md:py-24 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-primary mb-12">Как это работает</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="space-y-6">
+          <h3 class="text-xl font-bold text-primary">Упрощенная</h3>
+          <ol class="space-y-3 text-gray-700">
+            <li><span class="font-bold text-cta">1.</span> Проверка соответствия МСП</li>
+            <li><span class="font-bold text-cta">2.</span> Подготовка документов</li>
+            <li><span class="font-bold text-cta">3.</span> Уведомление ФНС</li>
+            <li><span class="font-bold text-cta">4.</span> Публикации не делаете</li>
+            <li><span class="font-bold text-cta">5.</span> Запись в ЕГРЮЛ</li>
+          </ol>
+        </div>
+        <div class="space-y-6">
+          <h3 class="text-xl font-bold text-primary">Полная ликвидация</h3>
+          <ol class="space-y-3 text-gray-700">
+            <li><span class="font-bold text-cta">1.</span> Диагностика и план</li>
+            <li><span class="font-bold text-cta">2.</span> Собрание, решение о ликвидации</li>
+            <li><span class="font-bold text-cta">3.</span> Уведомления, инвентаризация</li>
+            <li><span class="font-bold text-cta">4.</span> Расчёты с кредиторами, публикации</li>
+            <li><span class="font-bold text-cta">5.</span> Исключение из ЕГРЮЛ</li>
+          </ol>
+        </div>
+        <div class="space-y-6">
+          <h3 class="text-xl font-bold text-primary">Возобновление</h3>
+          <ol class="space-y-3 text-gray-700">
+            <li><span class="font-bold text-cta">1.</span> Анализ текущей ситуации</li>
+            <li><span class="font-bold text-cta">2.</span> Выявление причин затягивания</li>
+            <li><span class="font-bold text-cta">3.</span> План доработки процедуры</li>
+            <li><span class="font-bold text-cta">4.</span> Доп. действия по необходимости</li>
+            <li><span class="font-bold text-cta">5.</span> Завершение и запись в ЕГРЮЛ</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ПОЧЕМУ МЫ -->
+  <section id="why" class="py-16 md:py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-primary mb-12">Почему мы</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="flex gap-4" x-data="counterBlock()">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-cta/20 flex items-center justify-center text-cta font-black"><span x-text="number >= 500 ? '500+' : number + '+'">0+</span></div>
+          <div>
+            <h3 class="font-bold text-lg text-primary">500+ ликвидированных ООО</h3>
+            <p class="text-gray-600 text-sm">Опыт и отработанные процедуры</p>
+          </div>
+        </div>
+        <div class="flex gap-4">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-cta/20 flex items-center justify-center">
+            <svg class="w-6 h-6 text-cta" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <div>
+            <h3 class="font-bold text-lg text-primary">Только официальные процедуры</h3>
+            <p class="text-gray-600 text-sm">Без серых схем и рисков</p>
+          </div>
+        </div>
+        <div class="flex gap-4">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-cta/20 flex items-center justify-center">
+            <svg class="w-6 h-6 text-cta" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+          </div>
+          <div>
+            <h3 class="font-bold text-lg text-primary">Бесплатная диагностика ситуации</h3>
+            <p class="text-gray-600 text-sm">Поймём вариант и сроки</p>
+          </div>
+        </div>
+        <div class="flex gap-4">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-cta/20 flex items-center justify-center">
+            <svg class="w-6 h-6 text-cta" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <div>
+            <h3 class="font-bold text-lg text-primary">Фиксированная цена без сюрпризов</h3>
+            <p class="text-gray-600 text-sm">Озвучиваем стоимость до начала работ</p>
+          </div>
+        </div>
+        <div class="flex gap-4">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-cta/20 flex items-center justify-center">
+            <svg class="w-6 h-6 text-cta" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0h.5a2.5 2.5 0 002.5-2.5V3.935M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <div>
+            <h3 class="font-bold text-lg text-primary">Работаем удалённо по РФ</h3>
+            <p class="text-gray-600 text-sm">Не важен регион регистрации ООО</p>
+          </div>
+        </div>
+        <div class="flex gap-4">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-cta/20 flex items-center justify-center">
+            <svg class="w-6 h-6 text-cta" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+          </div>
+          <div>
+            <h3 class="font-bold text-lg text-primary">Гарантия внесения записи в ЕГРЮЛ</h3>
+            <p class="text-gray-600 text-sm">В течение 4–5 мес при отсутствии приостановки/отказа ФНС не по нашей вине. Поэтапная отчётность. 50% предоплата, 50% после записи в ЕГРЮЛ.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STICKY ФОРМА -->
+  <div
+    x-show="showStickyBar"
+    x-transition:enter="transition ease-out duration-300"
+    x-transition:enter-start="translate-y-full opacity-0"
+    x-transition:enter-end="translate-y-0 opacity-100"
+    class="fixed bottom-0 left-0 right-0 z-40 bg-white border-t shadow-lg py-4 px-4 md:px-8"
+  >
+    <div class="max-w-4xl mx-auto flex flex-col sm:flex-row items-center gap-4 justify-between">
+      <p class="text-gray-700 font-semibold text-center sm:text-left">Получите план и смету за 24 часа</p>
+      <button @click="openModal('plan')" class="bg-cta hover:bg-emerald-600 text-white font-bold px-6 py-3 rounded-lg whitespace-nowrap">Оставить заявку</button>
+    </div>
+  </div>
+
+  <!-- ФОРМА ЗАЯВКИ (блок на странице) -->
+  <section id="form-block" class="py-16 md:py-24 bg-gray-50">
+    <div class="max-w-xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-primary mb-6">Заявка на расчёт</h2>
+      <form @submit.prevent="submitForm" class="bg-white rounded-2xl shadow-lg p-6 md:p-8 space-y-5">
+        <div>
+          <label class="block text-sm font-semibold text-gray-700 mb-2">Выберите вариант</label>
+          <div class="space-y-2">
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="radio" name="service" value="Упрощенная ликвидация" x-model="formData.service" class="text-cta">
+              <span>Упрощенная ликвидация</span>
+            </label>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="radio" name="service" value="Полная ликвидация" x-model="formData.service" class="text-cta">
+              <span>Полная ликвидация</span>
+            </label>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="radio" name="service" value="Затянувшаяся ликвидация" x-model="formData.service" class="text-cta">
+              <span>Затянувшаяся ликвидация</span>
+            </label>
+          </div>
+        </div>
+        <div>
+          <label class="block text-sm font-semibold text-gray-700 mb-2">Кратко о ситуации</label>
+          <textarea x-model="formData.situation" placeholder="Есть долги / не сдан баланс / приостановка ФНС..." rows="3" class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-cta focus:border-cta"></textarea>
+        </div>
+        <div>
+          <label class="block text-sm font-semibold text-gray-700 mb-2">Телефон</label>
+          <input type="tel" x-model="formData.phone" required class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-cta focus:border-cta" placeholder="+7 (999) 123-45-67">
+        </div>
+        <div>
+          <label class="block text-sm font-semibold text-gray-700 mb-2">Email</label>
+          <input type="email" x-model="formData.email" class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-cta focus:border-cta" placeholder="mail@example.com">
+        </div>
+        <button type="submit" class="w-full bg-cta hover:bg-emerald-600 text-white font-bold py-4 rounded-xl transition">
+          Получить план и смету за 24ч
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ТЕСТ "ПОДХОДИТ ЛИ УПРОЩЕННАЯ" -->
+  <section class="py-16 bg-white">
+    <div class="max-w-2xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-primary mb-6">Подходит ли вам упрощенная ликвидация?</h2>
+      <p class="text-gray-600 mb-4">Ответьте на 4 вопроса.</p>
+      <p class="text-gray-500 text-sm mb-8">Упрощенная ликвидация — если на все четыре вопроса ответ «Да». Полная ликвидация или индивидуальный разбор — если хотя бы на один вопрос ответ «Нет».</p>
+      <div x-data="quiz()" class="space-y-6">
+        <template x-if="step <= 4">
+          <div class="space-y-6">
+            <div x-show="step === 1">
+              <p class="font-semibold text-lg mb-3">1. Ваша организация — малое или среднее предприятие (выручка и численность в пределах лимитов МСП)?</p>
+              <div class="flex flex-wrap gap-3">
+                <button @click="answer(1, true)" class="px-4 py-2 rounded-lg border-2 border-cta text-cta font-semibold hover:bg-cta hover:text-white">Да</button>
+                <button @click="answer(1, false)" class="px-4 py-2 rounded-lg border-2 border-gray-300 hover:bg-gray-100">Нет</button>
+              </div>
+            </div>
+            <div x-show="step === 2">
+              <p class="font-semibold text-lg mb-3">2. Задолженность перед бюджетом, внебюджетными фондами и кредиторами отсутствует?</p>
+              <div class="flex flex-wrap gap-3">
+                <button @click="answer(2, true)" class="px-4 py-2 rounded-lg border-2 border-cta text-cta font-semibold hover:bg-cta hover:text-white">Да</button>
+                <button @click="answer(2, false)" class="px-4 py-2 rounded-lg border-2 border-gray-300 hover:bg-gray-100">Нет</button>
+              </div>
+            </div>
+            <div x-show="step === 3">
+              <p class="font-semibold text-lg mb-3">3. Организация находится на УСН или освобождена от НДС?</p>
+              <div class="flex flex-wrap gap-3">
+                <button @click="answer(3, true)" class="px-4 py-2 rounded-lg border-2 border-cta text-cta font-semibold hover:bg-cta hover:text-white">Да</button>
+                <button @click="answer(3, false)" class="px-4 py-2 rounded-lg border-2 border-gray-300 hover:bg-gray-100">Нет</button>
+              </div>
+            </div>
+            <div x-show="step === 4">
+              <p class="font-semibold text-lg mb-3">4. Ваш адрес является достоверным?</p>
+              <div class="flex flex-wrap gap-3">
+                <button @click="answer(4, true)" class="px-4 py-2 rounded-lg border-2 border-cta text-cta font-semibold hover:bg-cta hover:text-white">Да</button>
+                <button @click="answer(4, false)" class="px-4 py-2 rounded-lg border-2 border-gray-300 hover:bg-gray-100">Нет</button>
+              </div>
+            </div>
+          </div>
+        </template>
+        <div x-show="step > 4" x-transition class="p-6 rounded-2xl" :class="allYes ? 'bg-emerald-50 border-2 border-cta' : 'bg-amber-50 border-2 border-amber-300'">
+          <p x-show="allYes" class="text-lg font-semibold text-cta">Вероятно, вам подойдёт упрощенная ликвидация. Оставьте заявку — мы проверим и подготовим план от 9 500₽.</p>
+          <div x-show="allYes" class="mt-4">
+            <button @click="$dispatch('open-plan-modal')" class="bg-cta hover:bg-emerald-600 text-white font-semibold px-6 py-3 rounded-lg transition">Оставить заявку</button>
+          </div>
+          <p x-show="!allYes" class="text-lg font-semibold text-amber-800">Скорее всего, потребуется полная ликвидация или индивидуальный разбор. Оставьте заявку — проведём бесплатную диагностику.</p>
+          <div x-show="!allYes" class="mt-4">
+            <button @click="$dispatch('open-plan-modal')" class="bg-cta hover:bg-emerald-600 text-white font-semibold px-6 py-3 rounded-lg transition">Оставить заявку</button>
+          </div>
+          <button @click="step = 1; answers = {}" class="mt-4 text-cta font-semibold hover:underline">Пройти тест заново</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="py-16 md:py-24 bg-gray-50">
+    <div class="max-w-3xl mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-primary mb-12">Частые вопросы</h2>
+      <div x-data="{ open: null }" class="space-y-3">
+        <div class="bg-white rounded-xl shadow border border-gray-200 overflow-hidden">
+          <button @click="open = open === 1 ? null : 1" class="w-full text-left px-5 py-4 font-semibold flex justify-between items-center">
+            Сколько стоит ликвидация ООО?
+            <svg class="w-5 h-5 transition transform" :class="open === 1 && 'rotate-180'" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div x-show="open === 1" x-transition class="px-5 pb-4 text-gray-600 text-sm space-y-2">
+            <p>Упрощенная — от 9 500₽ (возможны дополнительные расходы).</p>
+            <p>Полная ликвидация — от 32 000₽ (дополнительные расходы: нотариус в среднем 4–5 тыс. ₽, зависит от региона, публикация в «Вестнике» в среднем 4 500 ₽, публикации в ФЕДРЕСУРС от 1 061 ₽).</p>
+            <p>Возобновление затянувшейся ликвидации — от 55 000₽. Дополнительные расходы по ситуации.</p>
+          </div>
+        </div>
+        <div class="bg-white rounded-xl shadow border border-gray-200 overflow-hidden">
+          <button @click="open = open === 2 ? null : 2" class="w-full text-left px-5 py-4 font-semibold flex justify-between items-center">
+            Какой срок ликвидации?
+            <svg class="w-5 h-5 transition transform" :class="open === 2 && 'rotate-180'" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div x-show="open === 2" x-transition class="px-5 pb-4 text-gray-600 text-sm">Упрощенная — около 3,5 месяцев. Полная — от 4 до 12 месяцев в зависимости от наличия долгов и активов. Возобновление — индивидуально после диагностики.</div>
+        </div>
+        <div class="bg-white rounded-xl shadow border border-gray-200 overflow-hidden">
+          <button @click="open = open === 3 ? null : 3" class="w-full text-left px-5 py-4 font-semibold flex justify-between items-center">
+            Есть ли гарантия результата?
+            <svg class="w-5 h-5 transition transform" :class="open === 3 && 'rotate-180'" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div x-show="open === 3" x-transition class="px-5 pb-4 text-gray-600 text-sm">Гарантия внесения записи в ЕГРЮЛ в течение 4–5 месяцев при отсутствии приостановки или отказа ФНС не по нашей вине. Поэтапная отчётность и сроки на следующий этап. Оплата: 50% предоплата, 50% после записи в ЕГРЮЛ.</div>
+        </div>
+        <div class="bg-white rounded-xl shadow border border-gray-200 overflow-hidden">
+          <button @click="open = open === 4 ? null : 4" class="w-full text-left px-5 py-4 font-semibold flex justify-between items-center">
+            Работаете ли по всей России?
+            <svg class="w-5 h-5 transition transform" :class="open === 4 && 'rotate-180'" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div x-show="open === 4" x-transition class="px-5 pb-4 text-gray-600 text-sm">Да, работаем удалённо по всей России. Регион регистрации ООО не важен.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ФУТЕР -->
+  <footer class="bg-primary text-white py-12">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+        <div class="font-bold text-xl">JURIX Ликвидация</div>
+        <div class="flex flex-col sm:flex-row items-center gap-4">
+          <a href="tel:+78001234567" class="hover:text-white/80">+7 (800) 123-45-67</a>
+        </div>
+      </div>
+      <p class="mt-8 text-white/70 text-sm text-center md:text-left">Услуги по ликвидации ООО. Информация на сайте не является публичной офертой.</p>
+    </div>
+  </footer>
+
+  <!-- МОДАЛКА -->
+  <div
+    x-show="modalOpen"
+    x-cloak
+    @keydown.escape.window="modalOpen = false"
+    class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50"
+    @click.self="modalOpen = false"
+  >
+    <div x-show="modalOpen" x-transition class="bg-white rounded-2xl shadow-xl max-w-lg w-full max-h-[90vh] overflow-y-auto" @click.stop>
+      <div class="p-6 md:p-8">
+        <div class="flex justify-between items-center mb-6">
+          <h3 class="text-xl font-bold text-primary">Получить план за 24ч</h3>
+          <button @click="modalOpen = false" class="text-gray-500 hover:text-gray-700 p-1" aria-label="Закрыть">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+          </button>
+        </div>
+        <form @submit.prevent="submitForm" class="space-y-5">
+          <div>
+            <label class="block text-sm font-semibold text-gray-700 mb-2">Вариант услуги</label>
+            <div class="space-y-2">
+              <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="modal_service" value="Упрощенная ликвидация" x-model="formData.service" class="text-cta"> Упрощенная ликвидация</label>
+              <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="modal_service" value="Полная ликвидация" x-model="formData.service" class="text-cta"> Полная ликвидация</label>
+              <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="modal_service" value="Затянувшаяся ликвидация" x-model="formData.service" class="text-cta"> Затянувшаяся ликвидация</label>
+            </div>
+          </div>
+          <div>
+            <label class="block text-sm font-semibold text-gray-700 mb-2">Кратко о ситуации</label>
+            <textarea x-model="formData.situation" placeholder="Есть долги / не сдан баланс..." rows="2" class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-cta"></textarea>
+          </div>
+          <div>
+            <label class="block text-sm font-semibold text-gray-700 mb-2">Телефон *</label>
+            <input type="tel" x-model="formData.phone" required class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-cta">
+          </div>
+          <div>
+            <label class="block text-sm font-semibold text-gray-700 mb-2">Email</label>
+            <input type="email" x-model="formData.email" class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-cta">
+          </div>
+          <button type="submit" class="w-full bg-cta hover:bg-emerald-600 text-white font-bold py-4 rounded-xl">Получить план и смету за 24ч</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script defer src="script.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</body>
+</html>

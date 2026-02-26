@@ -1,0 +1,49 @@
+/* JURIX Landing — custom overrides */
+
+:root {
+  --primary: #1e3a8a;
+  --accent: #3b82f6;
+  --cta: #10b981;
+}
+
+[x-cloak] {
+  display: none !important;
+}
+
+/* Hero: parallax background on scroll */
+.hero {
+  background-color: var(--primary);
+}
+.hero-bg {
+  background-color: var(--primary);
+  will-change: transform;
+}
+@media (prefers-reduced-motion: no-reduce) {
+  .hero-bg {
+    background-position: center center;
+    background-size: cover;
+  }
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus visible for a11y */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--cta);
+  outline-offset: 2px;
+}
+
+/* Form inputs — ring color */
+input:focus,
+textarea:focus {
+  --tw-ring-color: rgba(16, 185, 129, 0.5);
+}
+
+/* Slight performance: contain for sections */
+section {
+  contain: layout style;
+}
