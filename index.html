@@ -6,40 +6,27 @@
   <title>Ликвидация ООО под ключ от 9500₽ | Официально и законно</title>
   <meta name="description" content="Упрощенная ликвидация ООО от 9500₽. Полная ликвидация от 32000₽. Возобновление затянувшихся процедур. Работаем по всей России. Гарантия внесения записи в ЕГРЮЛ.">
   <meta name="keywords" content="ликвидация ООО, закрытие ООО, упрощенная ликвидация, ликвидация компании">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            primary: '#1e3a8a',
-            accent: '#3b82f6',
-            cta: '#10b981',
-          },
-          fontFamily: { sans: ['Inter', 'sans-serif'] },
-        }
-      }
-    }
-  </script>
-  <meta property="og:title" content="Ликвидация ООО под ключ от 9500₽ | JURIX">
+  <link rel="stylesheet" href="dist/tailwind.css?v=20260421">
+  <meta property="og:title" content="Ликвидация ООО под ключ от 9500₽ | OOOSTOP.RU">
   <meta property="og:description" content="Упрощенная ликвидация от 9500₽. Полная от 32000₽. Возобновление от 55000₽. Гарантия записи в ЕГРЮЛ.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="ru_RU">
+  <meta property="og:site_name" content="OOOSTOP.RU">
+  <meta property="og:url" content="https://ooostop.ru/">
+  <link rel="canonical" href="https://ooostop.ru/">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Ликвидация ООО под ключ от 9500₽">
   <meta name="twitter:description" content="Упрощенная ликвидация ООО от 9500₽. Официально и законно. Работаем по всей России.">
+  <meta name="twitter:url" content="https://ooostop.ru/">
   <link rel="stylesheet" href="styles.css">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": "JURIX Ликвидация",
+    "name": "OOOSTOP.RU",
     "description": "Юридические услуги по ликвидации ООО: упрощенная, полная, возобновление процедур.",
-    "url": "",
-    "telephone": "",
+    "url": "https://ooostop.ru/",
+    "telephone": "+74993020259",
     "priceRange": "от 9500₽",
     "areaServed": "RU",
     "hasOfferCatalog": {
@@ -79,14 +66,14 @@
     :class="scrollY > 50 ? 'bg-primary/95 shadow-lg py-3' : 'bg-transparent py-5'"
   >
     <div class="max-w-6xl mx-auto px-4 flex items-center justify-between">
-      <div class="text-white font-bold text-xl">JURIX Ликвидация</div>
+      <div class="text-white font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight">OOOSTOP.RU</div>
       <nav class="hidden md:flex items-center gap-6">
-        <a href="tel:+78001234567" class="text-white/90 hover:text-white text-sm">+7 (800) 123-45-67</a>
+        <a href="tel:+74993020259" class="text-white/90 hover:text-white text-sm">+7 499 3020259</a>
         <button
           @click="openModal('plan')"
           class="bg-cta hover:bg-emerald-600 text-white font-semibold px-5 py-2.5 rounded-lg transition"
         >
-          Получить план за 24ч
+          Заказать звонок
         </button>
       </nav>
       <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden text-white p-2" aria-label="Меню">
@@ -94,8 +81,8 @@
       </button>
     </div>
     <div x-show="mobileMenuOpen" x-cloak x-transition class="md:hidden bg-primary border-t border-white/20 px-4 py-3 space-y-2">
-      <a href="tel:+78001234567" class="block text-white py-2">+7 (800) 123-45-67</a>
-      <button @click="openModal('plan'); mobileMenuOpen = false" class="w-full bg-cta text-white font-semibold py-3 rounded-lg">Получить план за 24ч</button>
+      <a href="tel:+74993020259" class="block text-white py-2">+7 499 3020259</a>
+      <button @click="openModal('plan'); mobileMenuOpen = false" class="w-full bg-cta text-white font-semibold py-3 rounded-lg">Заказать звонок</button>
     </div>
   </header>
 
@@ -113,33 +100,36 @@
         <li class="flex items-center gap-2">✅ Возобновляем затянувшиеся ликвидации</li>
       </ul>
       <div class="grid sm:grid-cols-3 gap-4 mb-10">
-        <div class="bg-white/10 backdrop-blur rounded-xl p-5 border border-white/20 hover:bg-white/15 transition">
-          <h3 class="text-white font-bold text-lg mb-2">Официальная</h3>
-          <p class="text-white/80 text-sm">Полная процедура. От 32 000₽</p>
+        <div class="flex flex-col gap-3">
+          <div class="bg-white/10 backdrop-blur rounded-xl p-5 border border-white/20 hover:bg-white/15 transition">
+            <h3 class="text-white font-bold text-lg mb-2">Официальная</h3>
+            <p class="text-white/80 text-sm">Полная процедура. От 32 000₽</p>
+          </div>
+          <button @click="openModal('hero', 'Полная ликвидация')" class="w-full bg-cta hover:bg-emerald-600 text-white font-semibold py-3 rounded-lg transition">Получить консультацию</button>
         </div>
-        <div class="bg-white/10 backdrop-blur rounded-xl p-5 border border-white/20 hover:bg-white/15 transition">
-          <h3 class="text-white font-bold text-lg mb-2">Упрощенная</h3>
-          <p class="text-white/80 text-sm">МСП без долгов. От 9 500₽ + нотариус, публикации</p>
+        <div class="flex flex-col gap-3">
+          <div class="bg-white/10 backdrop-blur rounded-xl p-5 border border-white/20 hover:bg-white/15 transition">
+            <h3 class="text-white font-bold text-lg mb-2">Упрощенная</h3>
+            <p class="text-white/80 text-sm">От 9 500₽ без публикаций, без госпошлины</p>
+          </div>
+          <button @click="openModal('hero', 'Упрощенная ликвидация')" class="w-full bg-cta hover:bg-emerald-600 text-white font-semibold py-3 rounded-lg transition">Получить консультацию</button>
         </div>
-        <div class="bg-white/10 backdrop-blur rounded-xl p-5 border border-white/20 hover:bg-white/15 transition">
-          <h3 class="text-white font-bold text-lg mb-2">С проблемами</h3>
-          <p class="text-white/80 text-sm">Долги, затянувшаяся процедура. От 55 000₽</p>
+        <div class="flex flex-col gap-3">
+          <div class="bg-white/10 backdrop-blur rounded-xl p-5 border border-white/20 hover:bg-white/15 transition">
+            <h3 class="text-white font-bold text-lg mb-2">С проблемами</h3>
+            <p class="text-white/80 text-sm">Долги, затянувшаяся процедура. От 55 000₽</p>
+          </div>
+          <button @click="openModal('hero', 'Затянувшаяся ликвидация')" class="w-full bg-cta hover:bg-emerald-600 text-white font-semibold py-3 rounded-lg transition">Получить консультацию</button>
         </div>
       </div>
-      <button
-        @click="openModal('plan')"
-        class="bg-cta hover:bg-emerald-600 text-white font-bold text-lg px-8 py-4 rounded-xl transition shadow-lg"
-      >
-        Выбрать оптимальный тариф
-      </button>
     </div>
   </section>
 
   <!-- 3 ТАРИФА -->
   <section id="tariffs" class="py-16 md:py-24 bg-gray-50">
     <div class="max-w-6xl mx-auto px-4">
-      <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Наши тарифы</h2>
-      <p class="text-gray-600 text-lg mb-12 max-w-2xl">Три варианта ликвидации под разные ситуации. Обязательные расходы (нотариус, публикации) — отдельно.</p>
+      <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4 text-center">Сравнение вариантов ликвидации</h2>
+      <p class="text-gray-600 text-lg mb-12 max-w-3xl mx-auto text-center leading-relaxed">Три варианта ликвидации под разные ситуации. Обязательные расходы (нотариус, публикации) — отдельно.</p>
 
       <div class="overflow-x-auto mb-12">
         <table class="w-full min-w-[600px] bg-white rounded-xl shadow overflow-hidden">
@@ -220,6 +210,9 @@
           <button @click="openModal('plan', 'Затянувшаяся ликвидация')" class="w-full min-h-[48px] h-12 bg-cta text-white font-semibold rounded-lg hover:bg-emerald-600 transition flex items-center justify-center shrink-0">Подходит мне</button>
         </div>
       </div>
+      <a href="#fit-test" class="mt-8 flex w-fit mx-auto min-h-[48px] items-center bg-cta hover:bg-emerald-600 text-white font-semibold px-8 py-3 rounded-xl transition shadow-lg">
+        Как узнать, что мне подходит
+      </a>
     </div>
   </section>
 
@@ -367,8 +360,7 @@
     x-transition:enter-end="translate-y-0 opacity-100"
     class="fixed bottom-0 left-0 right-0 z-40 bg-white border-t shadow-lg py-4 px-4 md:px-8"
   >
-    <div class="max-w-4xl mx-auto flex flex-col sm:flex-row items-center gap-4 justify-between">
-      <p class="text-gray-700 font-semibold text-center sm:text-left">Получите план и смету за 24 часа</p>
+    <div class="max-w-4xl mx-auto flex flex-col sm:flex-row items-center gap-4 justify-center">
       <button @click="openModal('plan')" class="bg-cta hover:bg-emerald-600 text-white font-bold px-6 py-3 rounded-lg whitespace-nowrap">Оставить заявку</button>
     </div>
   </div>
@@ -408,14 +400,14 @@
           <input type="email" x-model="formData.email" class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-cta focus:border-cta" placeholder="mail@example.com">
         </div>
         <button type="submit" class="w-full bg-cta hover:bg-emerald-600 text-white font-bold py-4 rounded-xl transition">
-          Получить план и смету за 24ч
+          Отправить заявку
         </button>
       </form>
     </div>
   </section>
 
   <!-- ТЕСТ "ПОДХОДИТ ЛИ УПРОЩЕННАЯ" -->
-  <section class="py-16 bg-white">
+  <section id="fit-test" class="py-16 bg-white scroll-mt-28 md:scroll-mt-32">
     <div class="max-w-2xl mx-auto px-4">
       <h2 class="text-3xl font-bold text-primary mb-6">Подходит ли вам упрощенная ликвидация?</h2>
       <p class="text-gray-600 mb-4">Ответьте на 4 вопроса.</p>
@@ -513,9 +505,9 @@
   <footer class="bg-primary text-white py-12">
     <div class="max-w-6xl mx-auto px-4">
       <div class="flex flex-col md:flex-row justify-between items-center gap-6">
-        <div class="font-bold text-xl">JURIX Ликвидация</div>
+        <div class="font-bold text-xl">OOOSTOP.RU</div>
         <div class="flex flex-col sm:flex-row items-center gap-4">
-          <a href="tel:+78001234567" class="hover:text-white/80">+7 (800) 123-45-67</a>
+          <a href="tel:+74993020259" class="hover:text-white/80">+7 499 3020259</a>
         </div>
       </div>
       <p class="mt-8 text-white/70 text-sm text-center md:text-left">Услуги по ликвидации ООО. Информация на сайте не является публичной офертой.</p>
@@ -526,20 +518,20 @@
   <div
     x-show="modalOpen"
     x-cloak
-    @keydown.escape.window="modalOpen = false"
+    @keydown.escape.window="closeModal()"
     class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50"
-    @click.self="modalOpen = false"
+    @click.self="closeModal()"
   >
     <div x-show="modalOpen" x-transition class="bg-white rounded-2xl shadow-xl max-w-lg w-full max-h-[90vh] overflow-y-auto" @click.stop>
       <div class="p-6 md:p-8">
-        <div class="flex justify-between items-center mb-6">
-          <h3 class="text-xl font-bold text-primary">Получить план за 24ч</h3>
-          <button @click="modalOpen = false" class="text-gray-500 hover:text-gray-700 p-1" aria-label="Закрыть">
+        <div class="flex justify-between items-start gap-4 mb-5">
+          <h3 class="text-xl font-bold text-primary leading-tight min-h-[56px]" x-text="modalTitle">Получить план</h3>
+          <button type="button" @click.stop="closeModal()" class="text-gray-500 hover:text-gray-700 p-1" aria-label="Закрыть">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
           </button>
         </div>
-        <form @submit.prevent="submitForm" class="space-y-5">
-          <div>
+        <form @submit.prevent="submitForm" class="space-y-6">
+          <div x-show="showServiceSelector">
             <label class="block text-sm font-semibold text-gray-700 mb-2">Вариант услуги</label>
             <div class="space-y-2">
               <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="modal_service" value="Упрощенная ликвидация" x-model="formData.service" class="text-cta"> Упрощенная ликвидация</label>
@@ -559,13 +551,27 @@
             <label class="block text-sm font-semibold text-gray-700 mb-2">Email</label>
             <input type="email" x-model="formData.email" class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-cta">
           </div>
-          <button type="submit" class="w-full bg-cta hover:bg-emerald-600 text-white font-bold py-4 rounded-xl">Получить план и смету за 24ч</button>
+          <button type="submit" class="w-full bg-cta hover:bg-emerald-600 text-white font-bold py-4 rounded-xl">Отправить заявку</button>
         </form>
       </div>
     </div>
   </div>
 
-  <script defer src="script.js"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <!-- TOAST -->
+  <div
+    x-show="toastVisible"
+    x-cloak
+    class="fixed inset-0 z-[80] flex items-center justify-center px-4 pointer-events-none"
+  >
+    <p
+      class="max-w-md rounded-xl px-5 py-4 text-sm font-semibold shadow-xl text-white"
+      :class="toastType === 'success' ? 'bg-emerald-600' : 'bg-red-600'"
+      x-text="toastText"
+    ></p>
+  </div>
+
+
+  <script defer src="script.js?v=20260421a"></script>
+  <script defer src="vendor/alpine.min.js?v=3.14.9"></script>
 </body>
 </html>

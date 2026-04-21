@@ -1,10 +1,24 @@
 document.addEventListener('alpine:init', () => {
   Alpine.store('scroll', { y: 0, rate: 0, whyVisible: false });
 
+  const LEAD_ENDPOINT = '/api/lead';
+  const LEAD_SUBJECT = 'Заявка от OOOSTOP.RU';
+  const LEAD_AUTORESPONSE =
+    'Спасибо за заявку на OOOSTOP.RU.\n\n' +
+    'Мы получили ваше сообщение и свяжемся с вами по указанному телефону/email.\n\n' +
+    'Если письмо пришло ошибочно — просто проигнорируйте его.';
+
   Alpine.data('landingApp', () => ({
     scrollY: 0,
     showStickyBar: false,
     modalOpen: false,
+    modalTitle: 'Получить план',
+    showServiceSelector: true,
+    toastVisible: false,
+    toastText: '',
+    toastType: 'success',
+    toastTimer: null,
+    modalJustClosedAt: 0,
     mobileMenuOpen: false,
     formData: {
       service: '',
@@ -54,14 +68,99 @@ document.addEventListener('alpine:init', () => {
     },
 
     openModal(type, preset) {
+      if (Date.now() - this.modalJustClosedAt < 300) return;
+      const isHeroMode = type === 'hero';
       if (preset) this.formData.service = preset;
+      this.showServiceSelector = !isHeroMode;
+
+      if (isHeroMode) {
+        if (preset === 'Полная ликвидация') {
+          this.modalTitle = 'Получить консультацию по официальной ликвидации';
+        } else if (preset === 'Упрощенная ликвидация') {
+          this.modalTitle = 'Получить консультацию по упрощенной ликвидации';
+        } else if (preset === 'Затянувшаяся ликвидация') {
+          this.modalTitle = 'Получить консультацию по затянувшейся ликвидации';
+        } else {
+          this.modalTitle = 'Получить консультацию';
+        }
+      } else {
+        this.modalTitle = 'Получить план';
+      }
+
       this.modalOpen = true;
     },
 
-    submitForm() {
-      console.log('Submit', this.formData);
-      alert('Заявка отправлена. Мы свяжемся с вами в течение 24 часов.');
+    closeModal() {
       this.modalOpen = false;
+      this.modalJustClosedAt = Date.now();
+    },
+
+    showToast(text, type = 'success') {
+      this.toastText = text;
+      this.toastType = type;
+      this.toastVisible = true;
+      if (this.toastTimer) clearTimeout(this.toastTimer);
+      this.toastTimer = setTimeout(() => {
+        this.toastVisible = false;
+      }, 2000);
+    },
+
+    async submitForm() {
+      const email = (this.formData.email || '').trim();
+      if (!email) {
+        this.showToast('Укажите email — он нужен для автоответа.', 'error');
+        return;
+      }
+
+      const payload = {
+        _subject: LEAD_SUBJECT,
+        _template: 'table',
+        _captcha: 'false',
+        _autoresponse: LEAD_AUTORESPONSE,
+        service: this.formData.service || '',
+        situation: this.formData.situation || '',
+        phone: this.formData.phone || '',
+        email
+      };
+
+      try {
+        const res = await fetch(LEAD_ENDPOINT, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json'
+          },
+          body: JSON.stringify(payload)
+        });
+
+        const raw = await res.text();
+        let data = null;
+        try {
+          data = raw ? JSON.parse(raw) : null;
+        } catch (_) {
+          data = null;
+        }
+
+        if (!res.ok) {
+          const msg =
+            (data && (data.message || data.error)) ||
+            raw ||
+            `Ошибка отправки (HTTP ${res.status})`;
+          throw new Error(msg);
+        }
+
+        this.showToast('Заявка отправлена. Мы скоро свяжемся с вами.', 'success');
+        // Close modal after toast is painted (avoids transition/stacking glitches)
+        setTimeout(() => {
+          this.closeModal();
+        }, 50);
+      } catch (e) {
+        console.error(e);
+        this.showToast(
+          'Не удалось отправить заявку. Проверьте интернет и повторите.',
+          'error'
+        );
+      }
     }
   }));
 
