@@ -1,7 +1,7 @@
 document.addEventListener('alpine:init', () => {
   Alpine.store('scroll', { y: 0, rate: 0, whyVisible: false });
 
-  const LEAD_ENDPOINT = 'https://formsubmit.co/3630013@mail.ru';
+  const LEAD_ENDPOINT = '/api/lead';
   const LEAD_SUBJECT = 'Заявка от OOOSTOP.RU';
   const LEAD_AUTORESPONSE =
     'Спасибо за заявку на OOOSTOP.RU.\n\n' +
@@ -112,25 +112,23 @@ document.addEventListener('alpine:init', () => {
         return;
       }
 
-      const payload = new URLSearchParams({
+      const payload = {
         _subject: LEAD_SUBJECT,
-        _template: 'table',
-        _captcha: 'false',
         _autoresponse: LEAD_AUTORESPONSE,
         service: this.formData.service || '',
         situation: this.formData.situation || '',
         phone: this.formData.phone || '',
         email
-      });
+      };
 
       try {
         const res = await fetch(LEAD_ENDPOINT, {
           method: 'POST',
           headers: {
-            'Content-Type': 'application/x-www-form-urlencoded',
-            Accept: 'text/html,application/xhtml+xml'
+            'Content-Type': 'application/json',
+            Accept: 'application/json'
           },
-          body: payload.toString()
+          body: JSON.stringify(payload)
         });
 
         const raw = await res.text();
@@ -149,20 +147,6 @@ document.addEventListener('alpine:init', () => {
           throw new Error(msg);
         }
 
-        const responseUrl = (res.url || '').toLowerCase();
-        const bodyLower = (raw || '').toLowerCase();
-        const looksLikeFormSubmitLanding =
-          bodyLower.includes('formsubmit is a form backend') ||
-          bodyLower.includes('formsubmit | easy to use form backend');
-        const looksLikeSuccessPage =
-          responseUrl.includes('/thanks') ||
-          bodyLower.includes('thanks for your submission') ||
-          bodyLower.includes('thank you for your submission');
-
-        if (looksLikeFormSubmitLanding && !looksLikeSuccessPage) {
-          throw new Error('FormSubmit accepted HTTP request but did not confirm delivery.');
-        }
-
         this.showToast('Заявка отправлена. Мы скоро свяжемся с вами.', 'success');
         // Close modal after toast is painted (avoids transition/stacking glitches)
         setTimeout(() => {
@@ -171,7 +155,7 @@ document.addEventListener('alpine:init', () => {
       } catch (e) {
         console.error(e);
         this.showToast(
-          'Заявка не подтверждена сервисом. Проверьте активацию FormSubmit для 3630013@mail.ru.',
+          'Не удалось отправить заявку. Попробуйте еще раз через минуту.',
           'error'
         );
       }

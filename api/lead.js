@@ -1,4 +1,6 @@
-const FORM_SUBMIT_ENDPOINT = 'https://formsubmit.co/3630013@mail.ru';
+const RESEND_ENDPOINT = 'https://api.resend.com/emails';
+const LEAD_TO_EMAIL = '3630013@mail.ru';
+const DEFAULT_FROM_EMAIL = 'onboarding@resend.dev';
 
 function json(res, status, payload) {
   res.statusCode = status;
@@ -20,34 +22,62 @@ export default async function handler(req, res) {
     return json(res, 400, { ok: false, error: 'Email and phone are required' });
   }
 
-  const payload = new URLSearchParams({
-    _subject: typeof body._subject === 'string' ? body._subject : 'Заявка с сайта',
-    _template: 'table',
-    _captcha: 'false',
-    _autoresponse: typeof body._autoresponse === 'string' ? body._autoresponse : '',
-    service: typeof body.service === 'string' ? body.service : '',
-    situation: typeof body.situation === 'string' ? body.situation : '',
-    phone,
-    email
-  });
+  const resendApiKey = process.env.RESEND_API_KEY;
+  if (!resendApiKey) {
+    return json(res, 500, { ok: false, error: 'RESEND_API_KEY is not configured' });
+  }
+
+  const subject = typeof body._subject === 'string' ? body._subject : 'Заявка с сайта';
+  const service = typeof body.service === 'string' ? body.service : '';
+  const situation = typeof body.situation === 'string' ? body.situation : '';
+  const from = process.env.RESEND_FROM_EMAIL || DEFAULT_FROM_EMAIL;
+
+  const html = `
+    <h2>${subject}</h2>
+    <p><strong>Услуга:</strong> ${service || 'Не указана'}</p>
+    <p><strong>Телефон:</strong> ${phone}</p>
+    <p><strong>Email:</strong> ${email}</p>
+    <p><strong>Ситуация:</strong><br>${(situation || 'Не указана').replace(/\n/g, '<br>')}</p>
+  `;
+  const text =
+    `${subject}\n\n` +
+    `Услуга: ${service || 'Не указана'}\n` +
+    `Телефон: ${phone}\n` +
+    `Email: ${email}\n` +
+    `Ситуация: ${situation || 'Не указана'}`;
 
   try {
-    const upstream = await fetch(FORM_SUBMIT_ENDPOINT, {
+    const upstream = await fetch(RESEND_ENDPOINT, {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-        Accept: 'text/html,application/xhtml+xml'
+        Authorization: `Bearer ${resendApiKey}`,
+        'Content-Type': 'application/json'
       },
-      body: payload.toString()
+      body: JSON.stringify({
+        from,
+        to: [LEAD_TO_EMAIL],
+        reply_to: email,
+        subject,
+        html,
+        text
+      })
     });
 
     const raw = await upstream.text();
     if (!upstream.ok) {
-      return json(res, upstream.status, { ok: false, error: raw || 'Upstream error' });
+      console.error('Resend error:', upstream.status, raw);
+      return json(res, 502, { ok: false, error: 'Failed to send email via Resend' });
     }
 
-    return json(res, 200, { ok: true });
+    let data = null;
+    try {
+      data = raw ? JSON.parse(raw) : null;
+    } catch (_) {
+      data = null;
+    }
+    return json(res, 200, { ok: true, provider: 'resend', id: data && data.id ? data.id : null });
   } catch (error) {
+    console.error('Lead handler exception:', error);
     return json(res, 502, { ok: false, error: 'Failed to send lead' });
   }
 }
