@@ -65,8 +65,15 @@ export default async function handler(req, res) {
 
     const raw = await upstream.text();
     if (!upstream.ok) {
+      let resendError = 'Failed to send email via Resend';
+      try {
+        const parsed = raw ? JSON.parse(raw) : null;
+        if (parsed && typeof parsed.message === 'string' && parsed.message.trim()) {
+          resendError = parsed.message.trim();
+        }
+      } catch (_) {}
       console.error('Resend error:', upstream.status, raw);
-      return json(res, 502, { ok: false, error: 'Failed to send email via Resend' });
+      return json(res, 502, { ok: false, error: resendError });
     }
 
     let data = null;
