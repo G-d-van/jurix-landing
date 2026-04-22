@@ -107,8 +107,13 @@ document.addEventListener('alpine:init', () => {
 
     async submitForm() {
       const email = (this.formData.email || '').trim();
+      const phone = (this.formData.phone || '').trim();
       if (!email) {
         this.showToast('Укажите email — он нужен для автоответа.', 'error');
+        return;
+      }
+      if (!phone) {
+        this.showToast('Укажите телефон.', 'error');
         return;
       }
 
@@ -132,6 +137,7 @@ document.addEventListener('alpine:init', () => {
         });
 
         const raw = await res.text();
+        console.log('Lead API response:', res.status, raw);
         let data = null;
         try {
           data = raw ? JSON.parse(raw) : null;

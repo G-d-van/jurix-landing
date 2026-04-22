@@ -1,6 +1,6 @@
 const RESEND_ENDPOINT = 'https://api.resend.com/emails';
 const LEAD_TO_EMAIL = '3630013@mail.ru';
-const DEFAULT_FROM_EMAIL = 'onboarding@resend.dev';
+const DEFAULT_FROM_EMAIL = 'noreply@mail.ooostop.ru';
 
 function json(res, status, payload) {
   res.statusCode = status;
@@ -64,6 +64,7 @@ export default async function handler(req, res) {
     });
 
     const raw = await upstream.text();
+    console.log('Resend response:', upstream.status, raw);
     if (!upstream.ok) {
       let resendError = 'Failed to send email via Resend';
       try {
