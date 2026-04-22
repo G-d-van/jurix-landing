@@ -1,7 +1,7 @@
 document.addEventListener('alpine:init', () => {
   Alpine.store('scroll', { y: 0, rate: 0, whyVisible: false });
 
-  const LEAD_ENDPOINT = '/api/lead';
+  const LEAD_ENDPOINT = 'https://formsubmit.co/3630013@mail.ru';
   const LEAD_SUBJECT = 'Заявка от OOOSTOP.RU';
   const LEAD_AUTORESPONSE =
     'Спасибо за заявку на OOOSTOP.RU.\n\n' +
@@ -112,7 +112,7 @@ document.addEventListener('alpine:init', () => {
         return;
       }
 
-      const payload = {
+      const payload = new URLSearchParams({
         _subject: LEAD_SUBJECT,
         _template: 'table',
         _captcha: 'false',
@@ -121,16 +121,16 @@ document.addEventListener('alpine:init', () => {
         situation: this.formData.situation || '',
         phone: this.formData.phone || '',
         email
-      };
+      });
 
       try {
         const res = await fetch(LEAD_ENDPOINT, {
           method: 'POST',
           headers: {
-            'Content-Type': 'application/json',
-            Accept: 'application/json'
+            'Content-Type': 'application/x-www-form-urlencoded',
+            Accept: 'text/html,application/xhtml+xml'
           },
-          body: JSON.stringify(payload)
+          body: payload.toString()
         });
 
         const raw = await res.text();
