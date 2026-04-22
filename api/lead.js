@@ -1,4 +1,4 @@
-const FORM_SUBMIT_ENDPOINT = 'https://formsubmit.co/ajax/3630013@mail.ru';
+const FORM_SUBMIT_ENDPOINT = 'https://formsubmit.co/3630013@mail.ru';
 
 function json(res, status, payload) {
   res.statusCode = status;
@@ -20,7 +20,7 @@ export default async function handler(req, res) {
     return json(res, 400, { ok: false, error: 'Email and phone are required' });
   }
 
-  const payload = {
+  const payload = new URLSearchParams({
     _subject: typeof body._subject === 'string' ? body._subject : 'Заявка с сайта',
     _template: 'table',
     _captcha: 'false',
@@ -29,16 +29,16 @@ export default async function handler(req, res) {
     situation: typeof body.situation === 'string' ? body.situation : '',
     phone,
     email
-  };
+  });
 
   try {
     const upstream = await fetch(FORM_SUBMIT_ENDPOINT, {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json'
+        'Content-Type': 'application/x-www-form-urlencoded',
+        Accept: 'text/html,application/xhtml+xml'
       },
-      body: JSON.stringify(payload)
+      body: payload.toString()
     });
 
     const raw = await upstream.text();
