@@ -149,6 +149,20 @@ document.addEventListener('alpine:init', () => {
           throw new Error(msg);
         }
 
+        const responseUrl = (res.url || '').toLowerCase();
+        const bodyLower = (raw || '').toLowerCase();
+        const looksLikeFormSubmitLanding =
+          bodyLower.includes('formsubmit is a form backend') ||
+          bodyLower.includes('formsubmit | easy to use form backend');
+        const looksLikeSuccessPage =
+          responseUrl.includes('/thanks') ||
+          bodyLower.includes('thanks for your submission') ||
+          bodyLower.includes('thank you for your submission');
+
+        if (looksLikeFormSubmitLanding && !looksLikeSuccessPage) {
+          throw new Error('FormSubmit accepted HTTP request but did not confirm delivery.');
+        }
+
         this.showToast('Заявка отправлена. Мы скоро свяжемся с вами.', 'success');
         // Close modal after toast is painted (avoids transition/stacking glitches)
         setTimeout(() => {
@@ -157,7 +171,7 @@ document.addEventListener('alpine:init', () => {
       } catch (e) {
         console.error(e);
         this.showToast(
-          'Не удалось отправить заявку. Проверьте интернет и повторите.',
+          'Заявка не подтверждена сервисом. Проверьте активацию FormSubmit для 3630013@mail.ru.',
           'error'
         );
       }
