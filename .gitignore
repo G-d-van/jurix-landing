@@ -1,2 +1,4 @@
 .vercel
 node_modules
+api/config.php
+jurix-landing-push.bundle
