@@ -1,0 +1,12 @@
+Options -Indexes
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Старый путь Vercel → PHP на Beget
+  RewriteRule ^api/lead/?$ api/lead.php [L,QSA]
+</IfModule>
+
+<Files "config.php">
+  Require all denied
+</Files>

@@ -1,7 +1,7 @@
 document.addEventListener('alpine:init', () => {
   Alpine.store('scroll', { y: 0, rate: 0, whyVisible: false });
 
-  const LEAD_ENDPOINT = '/api/lead.php';
+  const LEAD_ENDPOINT = '/api/lead';
   const LEAD_SUBJECT = 'Заявка от OOOSTOP.RU';
   const LEAD_AUTORESPONSE =
     'Спасибо за заявку на OOOSTOP.RU.\n\n' +

@@ -1,4 +1,9 @@
 .vercel
 node_modules
 api/config.php
+beget/api/config.php
 jurix-landing-push.bundle
+ooostop-beget.tar.gz
+ooostop-beget.zip
+ooostop-upload.tar.gz
+.venv-deploy/
