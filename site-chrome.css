@@ -61,8 +61,8 @@
   text-decoration: none;
   font-size: 0.95rem;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.9);
-  background: var(--chrome-primary);
+  color: var(--chrome-muted);
+  background: #fff;
   border: 1px solid transparent;
   white-space: nowrap;
   border-bottom: 1px solid transparent;
@@ -70,15 +70,15 @@
 }
 
 .section-switch a:hover {
-  color: #fff;
-  background: rgba(30, 58, 138, 0.92);
+  color: var(--chrome-primary);
+  background: #f8fafc;
 }
 
 .section-switch a.is-active {
-  color: var(--chrome-primary);
-  background: #fff;
+  color: rgba(255, 255, 255, 0.92);
+  background: var(--chrome-primary);
   border-color: var(--chrome-line);
-  border-bottom: 1px solid #fff;
+  border-bottom: 1px solid var(--chrome-primary);
   z-index: 1;
 }
 
