@@ -1,0 +1,22 @@
+/* Временный прототип — зеркало production chrome */
+@import url("../site-chrome.css");
+
+html, body {
+  margin: 0;
+  height: 100%;
+  background: #fff;
+}
+
+.page-frame {
+  display: block;
+  width: 100%;
+  height: calc(100vh - 65px);
+  border: 0;
+  background: #fff;
+}
+
+@media (max-width: 720px) {
+  .page-frame {
+    height: calc(100vh - 110px);
+  }
+}

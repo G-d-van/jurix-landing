@@ -4,6 +4,33 @@
   "outputDirectory": ".",
   "installCommand": "npm ci",
   "buildCommand": "npm run build:css",
+  "redirects": [
+    {
+      "source": "/buhgalteriya-pri-likvidacii-ooo.html",
+      "destination": "/buhgalteriya.html",
+      "permanent": true
+    },
+    {
+      "source": "/preview",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/preview/",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/preview/yuridicheskie.html",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/preview/buhgalteriya.html",
+      "destination": "/buhgalteriya.html",
+      "permanent": false
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",
